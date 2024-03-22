@@ -26,6 +26,12 @@
             justify-content: center;
             align-items: flex-end;
             overflow: hidden;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: linear-gradient(45deg, purple, pink, rgb(0, 255, 34));
         }
 
         .flower {
@@ -33,8 +39,8 @@
         }
 
         .flower__glass {
-            width: 20vmin;
-            height: 30vmin;
+            width: 20%;
+            height: 20%;
             background-image: var(--color-glass);
             clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
             opacity: .8;
@@ -197,7 +203,7 @@
             transform: translateX(-50%);
             width: 5vmin;
             height: 14vmin;
-            background-image: linear-gradient(to bottom, #f5ff85, #f5ff85, #f5ff85 99%);
+            background-image: linear-gradient(to bottom, #ffff85, #f5ff85, #f5ff85 99%);
 
             clip-path: ellipse(50% 50% at 50% 50%);
             transform-origin: center bottom;
@@ -364,41 +370,115 @@
         }
         /* Estilos CSS existentes aquí... */
         /* Añade estilos para los textos en las esquinas */
+      
+
         .corner-text {
             position: fixed;
             font-size: 90px;
             color: white;
             padding: 500px;
             z-index: 1000; /* Asegura que esté por encima del contenido */
+            animation: fadeOut 25s forwards; /* Animación de desvanecimiento */
         }
 
         .top-left {
-            top: 0;
-            left: 0;
+            top: 20px; /* Distancia desde la parte superior */
+            left: 20px; /* Distancia desde el lado izquierdo */
+            color: #000000;
+            font-weight: bold; /* Hace que el texto esté en negrita */
+
         }
 
         .top-right {
-            top: 0;
-            right: 0;
+            top: 20px; /* Distancia desde la parte superior */
+            right: 20px; /* Distancia desde el lado derecho */
+            color: #000000;
+            font-weight: bold; /* Hace que el texto esté en negrita */
+
         }
 
         .bottom-left {
-            bottom: 0;
-            left: 0;
+            bottom: 20px; /* Distancia desde la parte inferior */
+            left: 20px; /* Distancia desde el lado izquierdo */
+            color: #000000;
+;            font-weight: bold; /* Hace que el texto esté en negrita */
+
+
         }
 
         .bottom-right {
-            bottom: 0;
-            right: 0;
+            bottom: 20px; /* Distancia desde la parte inferior */
+            right: 20px; /* Distancia desde el lado derecho */
+            color: #000000;
+            font-weight: bold; /* Hace que el texto esté en negrita */
+
         }
-        
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                display: none; /* Oculta el texto después de la animación */
+            }
+        }
+        @keyframes particles {
+            0% {
+                transform: translateY(0) rotate(0deg) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(720deg) scale(0);
+                opacity: 0;
+            }
+        }
+
+        /* Estilos de partículas */
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            animation: particles 10s linear infinite;
+        }
+
+        /* Partículas de color morado */
+        .purple {
+            background-color: rgba(128, 0, 128, 0.7);
+            animation-delay: 0s;
+        }
+
+        /* Partículas de color rosa */
+        .pink {
+            background-color: rgba(255, 105, 180, 0.7);
+            animation-delay: 2s;
+        }
+
+        /* Partículas de color amarillo */
+        .yellow {
+            background-color: rgba(255, 255, 0, 0.7);
+            animation-delay: 4s;
+        }
+        h1 {
+            color: blue; /* Cambia el color del texto a azul */
+            font-weight: bold; /* Hace que el texto esté en negrita */
+        }
+        html {
+            font-size: 16px; /* Escala predefinida */
+}
+    </style>
     </style>
      
 </head>
 
 <body>
-    <div class="corner-text top-left"><center>Un Regalito</center><BR>Para la niña <br>que le da color <br> a mis dias grises</BR><br><img src="https://res.cloudinary.com/black-royal/image/upload/v1711069606/1_uzyzpj.png" alt=""></div>
-    <div class="corner-text bottom-right">ATT: DonPatoGuzman <br> Te amo  <br>    <audio src="jossy.mp3" controls loop="infinite"></audio>
+    <div class="particle purple"></div>
+    <div class="particle pink"></div>
+    <div class="particle yellow"></div>
+    <div class="corner-text top-left"><center>Un Regalito</center><BR>Para la niña <br>que da color <br> a mis dias grises</BR><br><img src="https://res.cloudinary.com/black-royal/image/upload/v1711069606/1_uzyzpj.png" alt=""></div>
+    <div class="corner-text bottom-right">ATT: DonPatoGuzman <br> Te amo  <br>    <audio src="C:\Users\Learde\Downloads\Flower\jossy.mp3" controls loop="infinite"></audio>
     </div>
    
     <div class="flower">
